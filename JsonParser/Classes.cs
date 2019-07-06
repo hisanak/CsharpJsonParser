@@ -20,8 +20,8 @@ namespace System.Json
         public JsonNumber()
         {
             m_regex = new Regex(@"-?[1-9]\d{0,}");
-            m_regexFloatNormal = new Regex(@"-?[1-9]\d*\.\d{1,}(e-?[1-9]{1,})?");
-            m_regexFloatZero = new Regex(@"-?0\.\d{1,}(e[1-9]\d{0,})?");
+            m_regexFloatNormal = new Regex(@"-?[1-9]\d*\.\d{1,}(e[+\-]?\d{1,})?");
+            m_regexFloatZero = new Regex(@"-?0\.\d{1,}(e[+\-]\d{1,})?");
         }
         public override dynamic Get(string str, out int length)
         {

@@ -41,6 +41,8 @@ namespace JsonParserTests
             tests.Add(new JsonTestDataset("   false  ", "false"));
             tests.Add(new JsonTestDataset("2.99e8", "299000000"));
             tests.Add(new JsonTestDataset("1.602e-19"));
+            tests.Add(new JsonTestDataset("1.602e+19"));
+            tests.Add(new JsonTestDataset("2.9e01", "29"));
             tests.Add(new JsonTestDataset("0.000000000000000000001", "1e-21"));
             tests.Add(new JsonTestDataset("\"hoge\""));
             tests.Add(new JsonTestDataset("\"!@#\""));
@@ -48,6 +50,7 @@ namespace JsonParserTests
             tests.Add(new JsonTestDataset("[ \"123\", 456]", "[\"123\", 456]"));
             tests.Add(new JsonTestDataset("{ \"hoge\": false }", "{\"hoge\": false}"));
             tests.Add(new JsonTestDataset("{\"a\":\"b\"}", "{\"a\": \"b\"}"));
+            tests.Add(new JsonTestDataset("99999999999999999999", "1e+20"));
 
 
             foreach (JsonTestDataset test in tests)
