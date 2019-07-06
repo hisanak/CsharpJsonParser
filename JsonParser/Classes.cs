@@ -71,6 +71,14 @@ namespace System.Json
                     length = ret.Length;
                     return longResult;
                 }
+
+                double doubleResult;
+                isParsed = double.TryParse(ret.Value, out doubleResult);
+                if (isParsed)
+                {
+                    length = ret.Length;
+                    return doubleResult;
+                }
             }
             throw new InvalidCastException("Cannot cast " + ret.Value);
         }
